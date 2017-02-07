@@ -43,13 +43,13 @@
              return false;
          }
 
-    };
+    };  */
 
     function onPhotoDataSuccess(imageData) {
 
     }
 
-    function onFail(message) {
+    /*function onFail(message) {
 
     }
 
