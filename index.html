@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.mobile-1.4.5.min.js"></script>
+	<title>Barcode |attendance</title>
+
+	<script type="text/javascript">
+
+        function scanBarcode() {
+            window.plugins.barcodeScanner.scan( function(result) {
+                    alert("We got a barcode\n" +
+                              "Result: " + result.text + "\n" +
+                              "Format: " + result.format + "\n" +
+                              "Cancelled: " + result.cancelled);
+                }, function(error) {
+                    alert("Scanning failed: " + error);
+                }
+            );
+
+        }
+        </script>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h1>Barcode Testing</h1>
+		</div>
+		<div class="ui-content">
+		<input type="button" onClick ="scanBarcode()" value ="Start session" />
+			<!--button id="">Start session</button-->
+		</div>
+	</div>
+
+</body>
+</html>
