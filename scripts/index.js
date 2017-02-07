@@ -28,7 +28,7 @@
 		//
 
 		//Geolocation start
-         /*var c = function (pos) {
+         var c = function (pos) {
              var lat = pos.coords.latitude,
                  long = pos.coords.longitude,
                  coords = lat + ', ' + long;
@@ -44,18 +44,18 @@
          }
 
     };
-*/
+
     function onPhotoDataSuccess(imageData) {
 
     }
-/*
+
     function onFail(message) {
 
     }
 
     function clearCache() {
 
-    }  */
+    }  
 
 })();
 
