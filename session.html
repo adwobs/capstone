@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Dashboard</title>
+<title>Barcode |attendance</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
@@ -12,31 +12,15 @@
 <script type="text/javascript" src="js/Myriad_Pro_400.font.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 
-<!--[if lt IE 7]>
-<link rel="stylesheet" href="css/ie6.css" type="text/css" media="screen">
-<script type="text/javascript" src="js/ie_png.js"></script>
-<script type="text/javascript">ie_png.fix('.png, footer, header nav ul li a, .nav-bg, .list li img');</script>
-<![endif]-->
-<!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/jquery.mobile.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
 </head>
-<style>
-table {
-    border-left: 1px solid #ddd;
-    width: 100%;
-}
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-    background-color: #008cc4;
-    color: white;
-}
-</style>
 <body id="page1">
 <!-- START PAGE SOURCE -->
 <div class="wrap">
@@ -49,16 +33,9 @@ th {
           <li><a href="#" class="m2"></a></li>
           <li><a href="#" class="m3"></a></li>
           <li><a href="#" class="m4"></a></li>
-          <li class="last"><a href="session.html" class="m5">Start session</a></li>
+          <li class="last"><a href="index.html" class="m5">End session</a></li>
         </ul>
-      </nav>  
-      <form action="#" id="search-form">
-        <fieldset>
-          <div class="rowElem">
-            <input type="text">
-            <a href="#">Search</a></div>
-        </fieldset>
-      </form>
+      </nav>
     </div>
   </header>
   <div class="container">
@@ -76,15 +53,10 @@ th {
       </ul>
     </aside>
     <section id="content">
-        <div><button type="button" onclick="attendance()">Table</button></div>
-        
-        <!--DISPLAY TABLE OF ATTENDEES HERE-->
-      <h2>Today's <span>Attendance</span></h2> 
-      <div class="inside">
-          <div id="table">
-          
-          </div>
-      </div>
+    <div class="inside">
+      <h2>Barcode <span>Testing</span></h2>
+    <input type="button" id ="scanBarcode" value ="Start session" />
+  </div>
     </section>
   </div>
 </div>
@@ -96,7 +68,6 @@ th {
   </div>
 </footer>
 <script type="text/javascript"> Cufon.now(); </script>
-<!-- END PAGE SOURCE -->
 <script type="text/javascript" src="MyScript.js"></script>
 </body>
 </html>
