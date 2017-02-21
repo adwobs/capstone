@@ -35,14 +35,5 @@ $cmd=$_REQUEST['cmd'];
             if($result){ echo ",";}
         }
         echo"]}";
-		/*echo "<table><tr>
-            <th>Students</th><th>Time of Attendance</th></tr>";
-        
-         while($result){
-			 echo"<tr><td>name</td>
-            <td>{result['student_time']}</td>";
-            
-		 }
-           echo"</tr></table>";*/
     }
 ?>

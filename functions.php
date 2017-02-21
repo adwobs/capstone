@@ -33,17 +33,13 @@ class functions extends wrapper
 	}
 
 	function viewTable(){
-		$strQuery=" select * from class_attendance";
+		$strQuery=" select class_attendance.student_time, (student.fullname) from class_attendance,student where class_attendance.fk_student_id=student.student_code";
 		return $this-> query($strQuery);
 	}
 
-	/* GET ABSENT STUDENT FROM CLASS LIST 
-	function absentism(){
-		$$strQuery= "select * from "
-	} **/
-
 	function courses($name){
-		$strQuery="select id from course where label='$name'";
+		$strQuery="select course_session.time_start, (course.label) from course_session, course where 
+course_session.fk_course_id=course.id;";
 		return $this-> query($strQuery);
 	}
 
