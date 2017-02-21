@@ -16,6 +16,8 @@
                      function (result) {
                          alert("Information: " + result.text + "\n" +
                             "Format: " + result.format + "\n");
+                         var studentid= result.text;
+                         alert(studentid);
                      },
                      function (error) {
                          alert(error);
