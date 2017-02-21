@@ -12,7 +12,6 @@
 		$(function () {
              "use strict";
              $("#scanBarcode").click(function () {
-                 //alert("clicked");
                  cordova.plugins.barcodeScanner.scan(
                      function (result) {
                          alert("Information: " + result.text + "\n" +
