@@ -27,8 +27,8 @@ class functions extends wrapper
 
 	}
 
-	function attendance($sid,$csid,$cid,$time){
-		$strQuery ="insert into class_attendance set fk_student_id='$sid', fk_course_session_id='$csid', fk_course_id='$cid', student_time='$time', attendance='p'";
+	function attendance($sid,$cid,$time){
+		$strQuery ="insert into class_attendance set fk_student_id='$sid', fk_course_id='$cid', student_time='$time', attendance='p'";
 		return $this-> query($strQuery);
 	}
 
@@ -41,7 +41,7 @@ class functions extends wrapper
 		$strQuery="select course_session.time_start, (course.label) from course_session, course where 
 course_session.fk_course_id=course.id;";
 		return $this-> query($strQuery);
-	}0
+	}
 
 	function sessions($id){
 		$strQuery="select id, time_start, fk_course_id from course_session where fk_course_id= $id";

@@ -16,8 +16,9 @@
                      function (result) {
                          alert("Information: " + result.text + "\n" +
                             "Format: " + result.format + "\n");
-                         var studentid= result.text;
-                         alert(studentid);
+                         var studentid= attendance(result.text);
+                         document.write(studentid);
+                         //alert(studentid);
                      },
                      function (error) {
                          alert(error);
@@ -56,6 +57,24 @@
 
     function clearCache() {
 
+    }
+
+    function attendance(studentid){
+        //var course_session="";
+        var course="Macroeconomics";
+        //var default="70592017";
+        alert(studentid);
+        var url="allAjax.php?cmd=2&fk_student_id="+studentid+
+        +"fk_course_id"+course;
+        $.ajax(Url,{async:true, complete:fillAttendance});
+    }
+
+    function fillAttendance(xhr,status){
+        if(status!="success"){
+            alert("error");
+            return;
+        }
+        var obj=$.parseJSON(xhr.responseText);
     }  
 
 })();

@@ -1,4 +1,6 @@
 <?php
+include_once("functions.php");
+
 if(!isset($_REQUEST['cmd'])){
     echo "cmd not found";
     exit();
@@ -16,8 +18,7 @@ $cmd=$_REQUEST['cmd'];
     }
 
 	//ajax function draws information from the database
-    function view(){
-        include_once("functions.php");
+    function view(){    
         $obj=new functions();
         $result=$obj->viewTable();
         if(!$result){
@@ -35,5 +36,18 @@ $cmd=$_REQUEST['cmd'];
             if($result){ echo ",";}
         }
         echo"]}";
+    }
+
+    function attendance(){
+        $obj=new functions();
+        $studentid=$_REQUEST['fk_student_id'];
+        $courseid=$_REQUEST['fk_course_id'];
+        $date=date("h:i");
+        $result=$obj->attendance($studentid,$courseid,$date);
+        if(!$result){
+            $data=array("result"=>"0");
+            echo json_encode($data);
+            return;
+        }
     }
 ?>
