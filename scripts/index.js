@@ -62,9 +62,10 @@
     function attendance(studentid){
         //var course_session="";
         var course="Macroeconomics";
-        //var default="70592017";
-        alert(studentid);
-        var url="allAjax.php?cmd=2&fk_student_id="+studentid+
+        var default="70592017";
+        alert(default);
+        //alert(studentid);
+        var url="allAjax.php?cmd=2&fk_student_id="+default+
         +"fk_course_id"+course;
         $.ajax(Url,{async:true, complete:fillAttendance});
     }
