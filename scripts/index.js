@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
     var pictureSource;
@@ -61,7 +61,7 @@
 
     function attendance(studentid){
         //var course_session="";
-        var course="Macroeconomics";
+        var course="3";
         //var default="70592017";
         //alert(default);
         //alert(studentid);
