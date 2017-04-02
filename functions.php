@@ -14,7 +14,8 @@ class functions extends wrapper
 	}
 
 	function login($name,$pword){
-		$strQuery="select username, password from Lecturer where username= '$name' and password ='$pword'";
+		$strQuery="select id, username, password from Lecturer where username= '$name' and password ='$pword'";
+		
 		return $this-> query($strQuery);
 	}
 
@@ -27,8 +28,8 @@ class functions extends wrapper
 
 	}
 
-	function attendance($sid,$cid,$time){
-		$strQuery ="insert into class_attendance set fk_student_id='$sid', fk_course_id='$cid', student_time='$time', attendance='p'";
+	function attendance($cid,$time,$code,$sid){
+		$strQuery ="insert into class_attendance set fk_student_id='$sid', fk_course_id='$cid', student_time='$time', code='$code', attendance='p'";
 		return $this-> query($strQuery);
 	}
 
@@ -37,9 +38,12 @@ class functions extends wrapper
 		return $this-> query($strQuery);
 	}
 
-	function courses($name){
-		$strQuery="select course_session.time_start, (course.label) from course_session, course where 
-course_session.fk_course_id=course.id;";
+	function courses($id){
+		$strQuery="select course.label, course.id, cast(course_session.time_start as time) as times from course, course_session, Lecturer, course_lecturer
+where $id=course_lecturer.fk_lect_id and course.id=course_session.fk_course_id
+and course.id=course_lecturer.fk_course_id";
+
+//echo $strQuery;
 		return $this-> query($strQuery);
 	}
 
@@ -48,3 +52,4 @@ course_session.fk_course_id=course.id;";
 		return $this-> query($strQuery);
 	}
 }
+

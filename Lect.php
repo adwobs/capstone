@@ -26,43 +26,34 @@
     </style>
   </head>
   <body>
-    <header></header>
+    <header>
+	<script>
+		function look(){
+			alert("Working");
+			var username=$("#username").val();
+			alert(username);
+		}
+	</script>
+	</header>
     <div class="section"></div>
     <main>
-	<?php
-	include_once("functions.php");
-	$obj=new functions();
-	if(isset($_REQUEST['username'])){
-	$username=$_REQUEST['username'];
-	$pword=$_REQUEST['password'];
-	
-	if(isset($_REQUEST['submit'])){
-	$r=$obj->login($username,$pword);
-	}
-	if(!$r){
-		echo "there is a problem here";
-	}
-	else{
-	header("Location:dashboard");
-	}
-	}
-	?>
+		
       <center>
         <h5 style="font-family: 'Dynalight';font-size: 35px;color:#26a69a">Sign In</h5>
         <div class="section"></div>
-        <form class="col s8 offset-s2" method="post" style="background: rgba(128,128,128,0.3); width:200px; border-radius:20px; padding-bottom:20px;">
+        <form class="col s8 offset-s2" method="Get" action="Lect.php" style="background: rgba(128,128,128,0.3); width:200px; border-radius:20px; padding-bottom:20px;">
           <div class='row'>
             <div class='col s12'>
             </div>
           </div>
           <div class='row'>
             <div class='input-field col s12'>
-              <input type='text' name='username' placeholder='Enter your Username' />
+              <input type="text" id="username" placeholder="Enter your Username" />
             </div>
           </div>
           <div class='row'>
             <div class='input-field col s12'>
-              <input type='password' name='password' placeholder='Enter password' />
+              <input type="password" id="password" placeholder="Enter password"/>
             </div>
             <label>
             <a class='pink-text' href='#!'><b>Forgot Password?</b></a>
@@ -71,7 +62,7 @@
           <br />
           <center>
             <div class='row'>
-              <a class="waves-effect waves-light btn"type="submit" name="submit" value="submit">Login</a>
+              <a class="waves-effect waves-light btn" type="submit" onclick="login()" name="send" value="submit">Login</a>
             </div>
           </center>
         </form>
@@ -91,5 +82,7 @@
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="MyScript.js"></script>
   </body>
 </html>

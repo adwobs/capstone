@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <style type="text/css" media="screen">
+      body { text-align:center; }
+    </style>
+  </head>
+  <body onload="myFunction()">
+    <p id="demo"></p>
+   <script>
+function myFunction() {
+    var stu_id = prompt("Please enter your id");
+    if (stu_id != null) {
+        document.getElementById("demo").innerHTML =
+        "Your attendance has been recorded";
+        
+    }
+    student(stu_id);
+}
+
+function student(stu_id){
+  var course='12';
+  //var time=date("h:i");
+  var code=5;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //Records(this);
+    }
+  };
+  xmlhttp.open("GET", "allAjax.php?cmd=4&course="+course+"&time="+code+"&student="+stu_id, true);
+  xmlhttp.send();
+}
+
+</script>
+
+  </body>
+</html>
