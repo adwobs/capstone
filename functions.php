@@ -37,11 +37,11 @@ class functions extends wrapper
 		$strQuery=" select class_attendance.student_time, (student.fullname) from class_attendance,student where class_attendance.fk_student_id=student.student_code";
 		return $this-> query($strQuery);
 	}
-
+		// selects the courses and the times they occur
 	function courses($id){
-		$strQuery="select course.label, course.id, cast(course_session.time_start as time) as times from course, course_session, Lecturer, course_lecturer
-where $id=course_lecturer.fk_lect_id and course.id=course_session.fk_course_id
-and course.id=course_lecturer.fk_course_id";
+		$strQuery="select course.label, course_session.id, cast(course_session.time_start as time) as times from course, course_session, Lecturer, course_lecturer
+where Lecturer.id=$id=course_lecturer.fk_lect_id and course.id=course_session.fk_course_id
+and course.id=course_lecturer.fk_course_id and course.id=course_session.fk_course_id;";
 
 //echo $strQuery;
 		return $this-> query($strQuery);
@@ -51,5 +51,11 @@ and course.id=course_lecturer.fk_course_id";
 		$strQuery="select id, time_start, fk_course_id from course_session where fk_course_id= $id";
 		return $this-> query($strQuery);
 	}
+
+	 function courseNames($id){
+	 	$strQuery="select course.label, cast(course_session.time_start as time) as times from course, course_session 
+where course_session.fk_course_id=$id=course.id";
+return $this-> query($strQuery);
+	 }
 }
 

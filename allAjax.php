@@ -20,8 +20,11 @@ $cmd=$_REQUEST['cmd'];
         case 3:
             course();
             break;
-        case 3:
+        case 4:
             student();
+            break;
+        case 5:
+            label();
             break;    
         default:
             exit();
@@ -116,4 +119,20 @@ $cmd=$_REQUEST['cmd'];
             echo json_encode($data);
     }
 }
+
+    function label(){
+        $obj=new functions();
+        $id=$_REQUEST['id'];
+        $r=$obj->courseNames($id);
+        if(!$r){
+            $data= array('result' =>"0");
+            echo json_encode($data);
+            return;
+        }
+        else{
+            $data=array("result"=>"1");
+            $r=$obj->fetch();
+            echo json_encode($data);
+        }
+    }
 ?>

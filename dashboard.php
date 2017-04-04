@@ -14,7 +14,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="qrcode.js">
 </script>
- <script type="text/javascript" src="MyScript.js"></script>
     <script type="text/javascript" src="html5-qrcode.js">
 </script>	
     <style>
