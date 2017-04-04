@@ -1,8 +1,9 @@
+<!-- Login for lecturers -->
 <html>
   <head>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/icon?family=Dynalight" rel="stylesheet">  
+    <link href="http://fonts.googleapis.com/icon?family=Dynalight" rel="stylesheet">
     <!--      use materialised-->
     <link type="text/css" rel="stylesheet" href="css/materialize/css/materialize.css"  media="screen,projection"/>
     <!--      font awesome-->
@@ -27,17 +28,16 @@
   </head>
   <body>
     <header>
-	<script>
-		function look(){
-			alert("Working");
-			var username=$("#username").val();
-			alert(username);
-		}
-	</script>
-	</header>
+      <script>
+        function look(){
+          alert("Working");
+          var username=$("#username").val();
+          alert(username);
+        }
+      </script>
+    </header>
     <div class="section"></div>
     <main>
-		
       <center>
         <h5 style="font-family: 'Dynalight';font-size: 35px;color:#26a69a">Sign In</h5>
         <div class="section"></div>

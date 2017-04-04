@@ -3,12 +3,13 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/myCSS.css">
 <script type="text/javascript" src="MyScript.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 
-<div class="dropdown">
+<div class="classdropdown">
 <button onclick= 'course()' class="dropbtn">Pick a course</button>
-  <div id="myDropdown" class="dropdown-content">
+  <div id="myDropdown" class="classdropdown-content">
   <?php
     include_once("functions.php");
     $obj=new functions();
@@ -20,7 +21,7 @@
     else{
         $row=$obj->fetch();
         while ($row) {
-            echo"<a value='{$row['id']}'>{$row['label']}</a>";
+            echo"<a onclick='label({$row['id']})'>{$row['label']}</a>";
             $row=$obj->fetch();
         }
     }
@@ -28,7 +29,7 @@
 </div>
 </div>
 
-    <div id="course"><h3>Course:</h3><h4></h4></div>
-    <div id="time"><h3>Time:</h3><h4></h4></div>
+    <div><strong>Course:</strong><span id="course"></span></div>
+    <div><strong>Time:</strong><span id="time"></span></div>
 </body>
 </html>
