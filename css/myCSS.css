@@ -44,7 +44,7 @@
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('searchicon.png');
+    /*    background-image: url('searchicon.png');*/
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -54,4 +54,20 @@
 
 .search[type=text]:focus {
     width: 40%;
+}
+
+h1 {
+  font-size: 3.9vw;
+}
+h3 {
+  font-size: 3.0vw;
+}
+h4 {
+  font-size: 2.2vw;
+}
+h4 {
+  font-size: 2vw;
+}
+p {
+  font-size: 2vw;
 }
